@@ -17,6 +17,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.475);
+    z-index: 999;
 }
 
 .wrap-img{
@@ -36,27 +37,119 @@ nav{
     gap: 10px;
 }
 
+.wrap-links a{
+    text-decoration: none;
+    color: rgb(1, 1, 150);
+    font-weight: bold;
+    transition: all 200ms ease-in-out;
+}
+
+.wrap-links a:hover{
+    text-decoration: underline;
+    color: rgb(0, 110, 255);
+}
+
 .logo{
     width: 70px;
     height: 70px;
 }
 
 #s1{
-    background-color: red;
     min-height: 100vh;
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right{
+    width: 350px;
+}
+
+.wrap-banner{
+    border-radius: 999px;
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+}
+
+.wrap-banner img{
+    width: 400px;
+    height: 400px;
+    filter: grayscale(1);
+    transition: all 200ms ease-in-out;
+}
+
+.wrap-banner img:hover{
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.right h1{
+    font-size: 40px;
+    width: 100%;
+    font-family: "Brush Script MT", cursive;
+    color: green;
+}
+
+.right p{
+    font-size: 18px;
+    width: 100%;
 }
 
 #s2{
-    background-color: blue;
     min-height: 100vh;
+    padding-top: 80px;
 }
 
 #s3{
-    background-color: green;
     min-height: 100vh;
+    padding-top: 80px;
 }
 
 #s4{
-    background-color: yellow;
     min-height: 100vh;
+    padding-top: 80px;
+}
+
+@media (width <= 768px){
+    nav{
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 15px;
+    }
+    .wrap-links a{
+        text-align: center;
+    }
+    #s1, #s2, #s3, #s4{
+        padding-top: 120px;
+    }
+
+    #s1{
+        flex-direction: column;
+    }
+
+    .left{
+        width: 100%;
+    }
+
+    .right{
+        width: 100%;
+        text-align: center;
+    }
+    .wrap-banner{
+        width: 250px;
+        height: 250px;
+    }
+    .wrap-banner img{
+        width: 250px;
+        height: 250px;
+    }
 }
