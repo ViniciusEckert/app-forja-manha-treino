@@ -6,6 +6,10 @@
     scroll-behavior: smooth;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 nav{
     position: fixed;
     top: 0;
@@ -18,6 +22,17 @@ nav{
     justify-content: space-between;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.475);
     z-index: 999;
+    animation: fromTop 2s ease-in-out;
+}
+
+@keyframes fromTop {
+    0%{
+        transform: translateY(-70px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+    
 }
 
 .wrap-img{
@@ -67,10 +82,36 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: fromLeft 2s ease-in-out;
+}
+
+@keyframes fromLeft {
+    0%{
+        transform: translateX(-100px) rotate(360deg);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    
 }
 
 .right{
     width: 350px;
+    animation: fromRight 2s ease-in-out;
+}
+
+@keyframes fromRight {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    
 }
 
 .wrap-banner{
@@ -107,17 +148,87 @@ nav{
 #s2{
     min-height: 100vh;
     padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4vh;
+    background-image: url('./Images/back.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrap-cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card{
+    width: 230px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('./Images/textura.jpg');
+}
+
+.card img{
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.card h3{
+    font-family: 'Wild West Shadow', sans-serif;
+    color: rgb(255, 216, 90);
+}
+
+.card p{
+    color: rgb(255, 255, 255);
 }
 
 #s3{
     min-height: 100vh;
-    padding-top: 80px;
+    width: 100%;
+    padding-top: 50px;
+}
+
+#s3 iframe{
+    width: 1080px;  
+    height: 576px;  
+    max-width: 90vw; 
+}
+
+.wrap-video{
+    width: 100%;
+    height: calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #s4{
     min-height: 100vh;
     padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+#s4 img{
+    width: 200px;
+    height: auto;
+    border: 2px solid black;
+}
+
+
 
 @media (width <= 768px){
     nav{
@@ -128,12 +239,10 @@ nav{
     .wrap-links a{
         text-align: center;
     }
-    #s1, #s2, #s3, #s4{
-        padding-top: 120px;
-    }
 
     #s1{
         flex-direction: column;
+        padding-top: 130px;
     }
 
     .left{
@@ -152,4 +261,15 @@ nav{
         width: 250px;
         height: 250px;
     }
+
+    #s3{
+    min-height: 50vh;
+    height: auto;
+    width: 100%;
+}
+
+#s3 iframe{
+    width: 100%;
+}
+
 }
